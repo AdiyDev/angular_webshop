@@ -1,7 +1,6 @@
-// import { of, from, Observable } from 'rxjs';
-import { fromEvent } from 'rxjs';
-// import { scan } from 'rxjs/operators';
-import { map } from 'rxjs/operators';
+// import { of, from, Observable, fromEvent, range, timer, interval} from 'rxjs';
+// import { scan,map } from 'rxjs/operators';
+// import {} from 'rxjs/operators';
 // $- stream реактивные
 // of (из любых данных) создаёт стрим и по очереди передаёт данные
 // const stream$ = of(1, 2, 3, 4, 5);
@@ -39,22 +38,32 @@ import { map } from 'rxjs/operators';
 // fromEvent(document.querySelector('canvas'), 'mousemove').subscribe((evt) => {
 //   console.log(evt);
 // });
-fromEvent(document.querySelector('canvas'), 'mousemove')
-  .pipe(
-    map((evt) => ({
-      x: evt.offsetX,
-      y: evt.offsetY,
-      ctx: evt.target.getContext('2d'),
-      // eslint-disable-next-line comma-dangle
-    }))
-  )
-  .subscribe((pos) => {
-    pos.ctx.fillRect(pos.x, pos.y, 2, 2);
-  });
+// fromEvent(document.querySelector('canvas'), 'mousemove')
+//   .pipe(
+//     map((evt) => ({
+//       x: evt.offsetX,
+//       y: evt.offsetY,
+//       ctx: evt.target.getContext('2d'),
+//       // eslint-disable-next-line comma-dangle
+//     }))
+//   )
+//   .subscribe((pos) => {
+//     pos.ctx.fillRect(pos.x, pos.y, 2, 2);
+//   });
 
-const clear$ = fromEvent(document.getElementById('clear'), 'click');
+// const clear$ = fromEvent(document.getElementById('clear'), 'click');
 
-clear$.subscribe(() => {
-  const canvas = document.querySelector('canvas');
-  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-});
+// clear$.subscribe(() => {
+//   const canvas = document.querySelector('canvas');
+//   canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+// });
+
+// const sub = interval(500).subscribe((val) => console.log(val));
+
+// setTimeout(() => {
+//   sub.unsubscribe();
+// }, 3000);
+
+// timer(500).subscribe((val) => console.log(val));
+
+// range(55, 11).subscribe((val) => console.log(val));
