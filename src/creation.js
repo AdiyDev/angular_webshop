@@ -1,6 +1,6 @@
 // import { of, from, Observable, fromEvent, range, timer, interval} from 'rxjs';
 // import { scan,map } from 'rxjs/operators';
-// import {} from 'rxjs/operators';
+
 // $- stream реактивные
 // of (из любых данных) создаёт стрим и по очереди передаёт данные
 // const stream$ = of(1, 2, 3, 4, 5);
@@ -44,7 +44,6 @@
 //       x: evt.offsetX,
 //       y: evt.offsetY,
 //       ctx: evt.target.getContext('2d'),
-//       // eslint-disable-next-line comma-dangle
 //     }))
 //   )
 //   .subscribe((pos) => {
@@ -63,7 +62,5 @@
 // setTimeout(() => {
 //   sub.unsubscribe();
 // }, 3000);
-
 // timer(500).subscribe((val) => console.log(val));
-
 // range(55, 11).subscribe((val) => console.log(val));

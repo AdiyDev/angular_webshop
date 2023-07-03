@@ -1,5 +1,4 @@
 import { interval } from 'rxjs';
-// eslint-disable-next-line object-curly-newline
 import { filter, map, take, scan } from 'rxjs/operators';
 
 const btn = document.getElementById('interval');
@@ -27,8 +26,6 @@ btn.addEventListener('click', () => {
         canDrink.push(people[i].name);
       }
       display.textContent = canDrink.join(' ');
-
-      // eslint-disable-next-line no-plusplus
       i++;
     } else {
       clearInterval(intervalNative);
@@ -42,10 +39,9 @@ rxjsBtn.addEventListener('click', () => {
 
   interval(500)
     .pipe(
-      take(people.length), // сколько взять
+      take(people.length),
       filter((v) => people[v].age >= 18),
       map((v) => people[v].name),
-      // eslint-disable-next-line comma-dangle
       scan((acc, v) => acc.concat(v), [])
     )
     .subscribe({
