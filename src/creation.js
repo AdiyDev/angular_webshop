@@ -38,6 +38,7 @@
 // fromEvent(document.querySelector('canvas'), 'mousemove').subscribe((evt) => {
 //   console.log(evt);
 // });
+
 // fromEvent(document.querySelector('canvas'), 'mousemove')
 //   .pipe(
 //     map((evt) => ({
@@ -58,7 +59,6 @@
 // });
 
 // const sub = interval(500).subscribe((val) => console.log(val));
-
 // setTimeout(() => {
 //   sub.unsubscribe();
 // }, 3000);
