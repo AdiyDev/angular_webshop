@@ -3,8 +3,8 @@ module.exports = {
   printWidth: 120,
   endOfLine: 'auto',
   arrowParens: 'always',
-  semi: false,
+  semi: true,
   useTabs: false,
   singleQuote: true,
   bracketSpacing: true,
-}
+};
