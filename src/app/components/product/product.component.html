@@ -15,7 +15,7 @@
   <div *ngIf="details">
     <p class="text-xs">{{ product.description }}</p>
     <p>
-      Rate: <span [ngStyle]="{ fontWeight: 'bold' }">{{ product.rating.rate | number : '1.2-4' }}</span>
+      Rate: <span [ngStyle]="{ fontWeight: 'bold' }">{{ product.rating?.rate || 0 | number : '1.2-4' }}</span>
     </p>
   </div>
 </div>

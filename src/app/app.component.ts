@@ -14,16 +14,13 @@ export class AppComponent implements OnInit {
   term = ''
   // products: IProduct[] = []
   loading = false
-  products$: Observable<IProduct[]>
+  // products$: Observable<IProduct[]>
 
-  constructor(private productService: ProductService, public modalService: ModalService) {}
+  constructor(public productService: ProductService, public modalService: ModalService) {}
 
   ngOnInit(): void {
     this.loading = true
-    // this.ProductService.getAll().subscribe((prod) => {
-    //   this.products = prod
-    //   this.loading = false
-    // })
-    this.products$ = this.productService.getAll().pipe(tap({ next: () => (this.loading = false) }))
+    this.productService.getAll().subscribe(() => (this.loading = false))
+    // this.products$ = this.productService.getAll().pipe(tap({ next: () => (this.loading = false) }))
   }
 }
