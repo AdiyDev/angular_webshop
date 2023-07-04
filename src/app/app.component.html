@@ -4,8 +4,6 @@
     {{ title | titlecase }}
   </h1>
   <input type="text" class="mb-2 border py-2 px-4 w-full" placeholder="write products filter" [(ngModel)]="term" />
-  <!-- [] литералы массива говорят, что это js  -->
-  <!-- <app-product [product]="products[0]"></app-product> -->
   <p *ngIf="loading" class="text-center text-lg">Loading...</p>
   <div *ngIf="products$ | async as products">
     <app-product
@@ -13,4 +11,7 @@
       [product]="product"
     ></app-product>
   </div>
+  <app-modal title="Create new product">
+    <app-create-product></app-create-product>
+  </app-modal>
 </div>
