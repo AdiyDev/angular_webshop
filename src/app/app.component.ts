@@ -9,6 +9,5 @@ import { products } from './data/products'
 })
 export class AppComponent {
   title = 'angular webshop'
-
   products: IProduct[] = products
 }
