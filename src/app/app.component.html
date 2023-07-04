@@ -1,3 +1,4 @@
+<app-global-error></app-global-error>
 <div class="max-w-2xl container mx-auto py-5">
   <h1 class="text-2xl font-bold underline text-center mb-3">
     {{ title | titlecase }}
@@ -5,5 +6,5 @@
   <!-- [] литералы массива говорят, что это js  -->
   <!-- <app-product [product]="products[0]"></app-product> -->
   <p *ngIf="loading" class="text-center text-lg">Loading...</p>
-  <app-product *ngFor="let product of products; let i = index" [product]="product"></app-product>
+  <app-product *ngFor="let product of products$ | async; let i = index" [product]="product"></app-product>
 </div>

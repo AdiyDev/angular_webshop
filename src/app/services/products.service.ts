@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpParams } from '@angular/common/http'
-import { Observable, delay } from 'rxjs'
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
+import { Observable, catchError, delay, throwError, retry } from 'rxjs'
 import { IProduct } from '../models/product'
+import { ErrorService } from './error.service'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private ErrorService: ErrorService) {}
 
   getAll(): Observable<IProduct[]> {
     return this.http
@@ -20,6 +21,11 @@ export class ProductService {
           fromObject: { limit: 4 },
         }),
       })
-      .pipe(delay(1500))
+      .pipe(delay(500), retry(2), catchError(this.errorHandler.bind(this)))
+  }
+
+  private errorHandler(error: HttpErrorResponse) {
+    this.ErrorService.handle(error.message)
+    return throwError(() => error.message)
   }
 }
