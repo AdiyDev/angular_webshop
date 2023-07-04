@@ -10,6 +10,7 @@ import { Observable, tap } from 'rxjs'
 })
 export class AppComponent implements OnInit {
   title = 'angular webshop'
+  term = ''
   // products: IProduct[] = []
   loading = false
   products$: Observable<IProduct[]>
