@@ -8,7 +8,7 @@ import { ErrorService } from './error.service'
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient, private ErrorService: ErrorService) {}
+  constructor(private http: HttpClient, private errorService: ErrorService) {}
 
   getAll(): Observable<IProduct[]> {
     return this.http
@@ -25,7 +25,7 @@ export class ProductService {
   }
 
   private errorHandler(error: HttpErrorResponse) {
-    this.ErrorService.handle(error.message)
+    this.errorService.handle(error.message)
     return throwError(() => error.message)
   }
 }
