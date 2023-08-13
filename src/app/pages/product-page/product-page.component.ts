@@ -8,20 +8,16 @@ import { Observable, tap } from 'rxjs'
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
-  styleUrls: ['./product-page.component.scss'],
 })
 export class ProductPageComponent implements OnInit {
-  title = 'angular webshop'
-  term = ''
-  // products: IProduct[] = []
-  loading = false
-  // products$: Observable<IProduct[]>
+  public title = 'angular webshop'
+  public term = ''
+  public loading = false
 
   constructor(public productService: ProductService, public modalService: ModalService) {}
 
   ngOnInit(): void {
     this.loading = true
     this.productService.getAll().subscribe(() => (this.loading = false))
-    // this.products$ = this.productService.getAll().pipe(tap({ next: () => (this.loading = false) }))
   }
 }

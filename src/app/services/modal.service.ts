@@ -14,6 +14,4 @@ export class ModalService {
   close() {
     this.isVisible$.next(false)
   }
-
-  constructor() {}
 }
