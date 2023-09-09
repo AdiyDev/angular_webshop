@@ -3,8 +3,6 @@ import { ModalService } from 'src/app/services/modal.service'
 
 import { Component, OnInit } from '@angular/core'
 
-import { Observable, tap } from 'rxjs'
-
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
